@@ -1,0 +1,55 @@
+/*____________________*/
+/*___ threeColumns ___*/
+:root {
+  --threeColumns: #000000;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.threeColumns,
+.threeColumns * {
+  box-sizing: border-box;
+  /* font-family: var(--font-geomanist-regular) !important; */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.threeColumns {
+  width: 100%;
+}
+.threeColumns-wrapper {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2em;
+}
+/*_________________________*/
+/*___ threeColumns item ___*/
+.threeColumns-column {
+  border: 1px solid #000000;
+}
+.threeColumns-column-image {
+  width: 100%;
+}
+.threeColumns-column-image > img {
+  width: 100%;
+}
+.threeColumns-column-content {
+  padding: 15px;
+  text-align: center;
+}
+.threeColumns-column-title {
+  font-size: 20px;
+  margin-bottom: 1em;
+  font-weight: 600;
+}
+.threeColumns-column-subTitle {
+  font-size: 16px;
+  margin: 0 auto 1.4em;
+  width: 85%;
+}
+.threeColumns-column-description {
+  font-size: 16px;
+}
