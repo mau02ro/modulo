@@ -47,8 +47,12 @@
 }
 .threeColumns-column-subTitle {
   font-size: 16px;
-  margin: 0 auto 1.4em;
+  margin: 0 auto;
   width: 85%;
+}
+.threeColumns-column-sect {
+  min-height: 80px;
+  margin-bottom: 1.4em;
 }
 .threeColumns-column-description {
   font-size: 16px;
