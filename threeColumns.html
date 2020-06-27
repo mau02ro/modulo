@@ -14,9 +14,6 @@
           <div class="threeColumns-column">
             <div class="threeColumns-column-image">
               <img src="./img/imagen.png" alt="" />
-              <div class="threeColumns-column-showMore">
-                <p>Ver mas</p>
-              </div>
             </div>
             <div class="threeColumns-column-content">
               <div class="threeColumns-column-sect">
@@ -43,9 +40,6 @@
           <div class="threeColumns-column">
             <div class="threeColumns-column-image">
               <img src="./img/foto.png" alt="" />
-              <div class="threeColumns-column-showMore">
-                <p>Ver mas</p>
-              </div>
             </div>
             <div class="threeColumns-column-content">
               <div class="threeColumns-column-sect">
@@ -67,12 +61,9 @@
 
         <!-- Start Item -->
         <a href="">
-          <div class="threeColumns-column">
+          <div class="threeColumns-column lol">
             <div class="threeColumns-column-image">
               <img src="./img/fondo.png" alt="" />
-              <div class="threeColumns-column-showMore">
-                <p>Ver mas</p>
-              </div>
             </div>
             <div class="threeColumns-column-content">
               <div class="threeColumns-column-sect">
@@ -93,5 +84,60 @@
         <!-- End Item -->
       </div>
     </section>
+
+    <script>
+      const threeColumns_wrapper = document.querySelector(
+        ".threeColumns-wrapper"
+      );
+
+      function setGridThreeColumns(
+        columns = threeColumns_wrapper.children.length,
+        status
+      ) {
+        let n_columns;
+        columns > 3 ? (n_columns = 3) : (n_columns = columns);
+        let n_rows = Math.ceil(
+          threeColumns_wrapper.children.length / n_columns
+        );
+
+        threeColumns_wrapper.style.gridTemplateColumns = `repeat(${n_columns}, minmax(100px, 350px))`;
+        if (
+          status &&
+          n_columns === 2 &&
+          threeColumns_wrapper.children.length % 3 === 0
+        ) {
+          let div =
+            threeColumns_wrapper.children[threeColumns_wrapper.children.length]
+              .childNodes[1];
+          div.style.left = "200px";
+        } else {
+          Array.prototype.forEach.call(
+            threeColumns_wrapper.children,
+            (column) => {
+              let div = column.childNodes[1];
+              div.style.left = "0px";
+            }
+          );
+        }
+      }
+
+      function calcGridGridThreeColumns() {
+        let max_width = window.innerWidth;
+        if (max_width <= 1130 && max_width > 740) {
+          setGridThreeColumns(2, true);
+        } else if (max_width <= 740) {
+          setGridThreeColumns(1);
+        } else {
+          setGridThreeColumns();
+        }
+      }
+
+      window.addEventListener("load", () => {
+        calcGridGridThreeColumns();
+      });
+      window.addEventListener("resize", () => {
+        calcGridGridThreeColumns();
+      });
+    </script>
   </body>
 </html>
