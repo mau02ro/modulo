@@ -107,9 +107,10 @@
           threeColumns_wrapper.children.length % 3 === 0
         ) {
           let div =
-            threeColumns_wrapper.children[threeColumns_wrapper.children.length]
-              .childNodes[1];
-          div.style.left = "200px";
+            threeColumns_wrapper.children[
+              threeColumns_wrapper.children.length - 1
+            ].childNodes[1];
+          div.style.left = "180px";
         } else {
           Array.prototype.forEach.call(
             threeColumns_wrapper.children,
