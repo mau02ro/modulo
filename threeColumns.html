@@ -82,60 +82,31 @@
           </div></a
         >
         <!-- End Item -->
+
+        <!-- Start Item -->
+        <a href="">
+          <div class="threeColumns-column lol">
+            <div class="threeColumns-column-image">
+              <img src="./img/fondo.png" alt="" />
+            </div>
+            <div class="threeColumns-column-content">
+              <div class="threeColumns-column-sect">
+                <h3 class="threeColumns-column-title">MEDIO AMBIENTE</h3>
+                <h4 class="threeColumns-column-subTitle">
+                  Campaña de limpieza de bosques en Sa Lazón
+                </h4>
+              </div>
+              <p class="threeColumns-column-description">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal distribution of letters, as opposed to using
+              </p>
+            </div>
+          </div></a
+        >
+        <!-- End Item -->
       </div>
     </section>
-
-    <script>
-      const threeColumns_wrapper = document.querySelector(
-        ".threeColumns-wrapper"
-      );
-
-      function setGridThreeColumns(
-        columns = threeColumns_wrapper.children.length,
-        status
-      ) {
-        let n_columns;
-        columns > 3 ? (n_columns = 3) : (n_columns = columns);
-        let n_rows = Math.ceil(
-          threeColumns_wrapper.children.length / n_columns
-        );
-
-        threeColumns_wrapper.style.gridTemplateColumns = `repeat(${n_columns}, minmax(100px, 350px))`;
-        if (
-          status &&
-          n_columns === 2 &&
-          threeColumns_wrapper.children.length % 3 === 0
-        ) {
-          let div =
-            threeColumns_wrapper.children[
-              threeColumns_wrapper.children.length - 1
-            ].childNodes[1];
-          div.style.left = "180px";
-        } else {
-          Array.prototype.forEach.call(
-            threeColumns_wrapper.children,
-            (column) => {
-              let div = column.childNodes[1];
-              div.style.left = "0px";
-            }
-          );
-        }
-      }
-
-      function calcGridGridThreeColumns() {
-        let max_width = window.innerWidth;
-        if (max_width <= 1130 && max_width > 740) {
-          setGridThreeColumns(2, true);
-        } else if (max_width <= 740) {
-          setGridThreeColumns(1);
-        } else {
-          setGridThreeColumns();
-        }
-      }
-      calcGridGridThreeColumns();
-      window.addEventListener("resize", () => {
-        calcGridGridThreeColumns();
-      });
-    </script>
   </body>
 </html>
