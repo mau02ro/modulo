@@ -13,7 +13,7 @@
   font-family: var(--font-geomanist-regular) !important;
   margin: 0;
   padding: 0;
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--threeColumns);
 }
 .threeColumns {
@@ -24,7 +24,7 @@
 }
 .threeColumns-wrapper {
   position: relative;
-  max-width: 90%;
+  max-width: 100%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -32,22 +32,24 @@
 }
 /*_________________________*/
 /*___ threeColumns item ___*/
+.threeColumns-wrapper > a {
+  margin: 20px;
+  display: inline-block;
+}
 .threeColumns-column {
   transition: 0.4s;
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
-  max-width: 350px;
-  margin: 20px;
+  max-width: 320px;
+  height: 100%;
 }
 .threeColumns-column-image {
   position: relative;
   width: 100%;
-  height: 255px;
 }
 .threeColumns-column-image > img {
   width: 100%;
-  height: 255px;
 }
 .threeColumns-shoeMore {
   display: none;
@@ -57,6 +59,7 @@
   justify-content: center;
   align-items: center;
   top: 0;
+  bottom: 0;
   width: 100%;
   color: #ffffff;
   font-size: 1.3em;
